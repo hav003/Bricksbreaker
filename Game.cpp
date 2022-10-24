@@ -123,4 +123,20 @@ void Game::CheckCollision()
 	}
 
 	// TODO #7 - If ball touches bottom of window, pause ball and display defeat text with R to reset
+	if (ball.y_position >= WINDOW_HEIGHT)
+	{
+		Console::SetCursorPosition(20,20);
+		Console::ForegroundColor(White);
+		printf("You lose. Press R to play again.");
+		char response;
+		cin >> response;
+		if (tolower(response) == tolower('R'))
+		{
+			for (int x = 0; x < bricks.size(); x++)
+			{
+				bricks.erase(bricks.begin() + x); //delete remaining bricks
+			}
+			Reset();
+		}
+	}
 }
