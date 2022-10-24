@@ -78,7 +78,7 @@ void Game::Render() const
 	{
 		bricks[i].Draw();
 	}
-
+	Console::CursorVisible(false);
 	Console::Lock(false);
 }
 
