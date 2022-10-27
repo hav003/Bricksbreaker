@@ -69,6 +69,7 @@ void Game::Render() const
 {
 	Console::Lock(true);
 	Console::Clear();
+
 	
 	paddle.Draw();
 	ball.Draw();
@@ -79,6 +80,7 @@ void Game::Render() const
 		bricks[i].Draw();
 	}	
 	Console::Lock(false);
+
 	Console::SetCursorPosition(20, 20);
 	Console::ForegroundColor(White);
 	printf("Press Space to begin or pause the game.");
@@ -86,9 +88,8 @@ void Game::Render() const
 }
 
 void Game::CheckCollision()
-{
-	// TODO #4 - Update collision to check all bricks
-
+{	
+	// TODO #4 - Update collision to check all bricks	
 	int size = bricks.size();
 	for (int i = 0; i < bricks.size(); i++)
 	{
@@ -108,7 +109,7 @@ void Game::CheckCollision()
 				{
 					Console::SetCursorPosition(20, 20);
 					Console::ForegroundColor(White);
-					printf("     You win! Press R to play again.   ");
+					printf("     You win! Type R to play again.    ");
 					char response;
 					cin >> response;
 					if (tolower(response) == tolower('R'))
@@ -131,7 +132,7 @@ void Game::CheckCollision()
 	{
 		Console::SetCursorPosition(20,20);
 		Console::ForegroundColor(White);
-		printf("     You lose. Press R to play again.  ");
+		printf("     You lose. Type R to play again.   ");
 		char response;
 		cin >> response;
 		if (tolower(response) == tolower('R'))
