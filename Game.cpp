@@ -20,7 +20,7 @@ void Game::Reset()
 	ResetBall();
 
 	// TODO #2 - Add this brick and 4 more bricks to the vector
-	for (int i = 0, x = 0; i < 5; i++, x += 15)
+	for (int i = 0, x = 5; i < 5; i++, x += 15)
 	{
 		Box brick;
 		brick.width = 10;
@@ -77,9 +77,12 @@ void Game::Render() const
 	for (int i = 0; i < bricks.size(); i++)
 	{
 		bricks[i].Draw();
-	}
-	Console::CursorVisible(false);
+	}	
 	Console::Lock(false);
+	Console::SetCursorPosition(30, 20);
+	Console::ForegroundColor(White);
+	printf("Press Space to begin.");
+	Console::CursorVisible(false);
 }
 
 void Game::CheckCollision()
