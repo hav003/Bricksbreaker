@@ -79,15 +79,16 @@ void Game::Render() const
 		bricks[i].Draw();
 	}	
 	Console::Lock(false);
-	Console::SetCursorPosition(30, 20);
+	Console::SetCursorPosition(20, 20);
 	Console::ForegroundColor(White);
-	printf("Press Space to begin.");
+	printf("Press Space to begin or pause the game.");
 	Console::CursorVisible(false);
 }
 
 void Game::CheckCollision()
 {
 	// TODO #4 - Update collision to check all bricks
+
 	int size = bricks.size();
 	for (int i = 0; i < bricks.size(); i++)
 	{

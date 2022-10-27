@@ -4,7 +4,7 @@
 void Ball::Update()
 {
 	if (!moving)
-		return;
+		return;	
 
 	int tempx = x_position + x_velocity;
 	int tempy = y_position + y_velocity;
