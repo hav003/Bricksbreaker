@@ -108,7 +108,7 @@ void Game::CheckCollision()
 				{
 					Console::SetCursorPosition(20, 20);
 					Console::ForegroundColor(White);
-					printf("You win! Press R to play again.");
+					printf("     You win! Press R to play again.   ");
 					char response;
 					cin >> response;
 					if (tolower(response) == tolower('R'))
@@ -131,7 +131,7 @@ void Game::CheckCollision()
 	{
 		Console::SetCursorPosition(20,20);
 		Console::ForegroundColor(White);
-		printf("You lose. Press R to play again.");
+		printf("     You lose. Press R to play again.  ");
 		char response;
 		cin >> response;
 		if (tolower(response) == tolower('R'))
@@ -140,6 +140,7 @@ void Game::CheckCollision()
 			{
 				bricks.erase(bricks.begin() + x); //delete remaining bricks
 			}
+			bricks.clear();
 			Reset();
 		}
 	}
